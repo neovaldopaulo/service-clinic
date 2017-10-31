@@ -1,0 +1,14 @@
+---
+
+- name: Make time right
+  hosts: localhost
+  tasks:
+   - name: Make sure that the package is installed
+     package: 
+       name: ntpd
+       state: present
+
+   - name: Make sure that the service is started
+     service:
+       name: ntpd
+       state: started
